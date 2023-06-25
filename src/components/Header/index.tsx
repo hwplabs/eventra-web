@@ -1,4 +1,4 @@
-import { Flex, Box, Text, Link, Spacer, Image } from "@chakra-ui/react";
+import { Flex, Box, Button, Link, Spacer, Image } from "@chakra-ui/react";
 import _logo from "../../assets/logo/eventra.png";
 import DropdownMenu from "../DropdownButton/DropdownButton";
 
@@ -8,14 +8,16 @@ const Header: React.FC = () => {
     // Perform desired action based on the clicked item
   };
   return (
-    <Box mx={5}>
+    <Box mx={5} py={1}>
       <Flex>
         <Flex>
           <Image boxSize="50px" objectFit="cover" src={_logo} alt="logo" />
-          <Link href="/" fontSize="3xl" textDecoration="none">Eventra</Link>
+          <Link href="/" fontSize="3xl" textDecoration="none">
+            Eventra
+          </Link>
         </Flex>
         <Spacer />
-        <Flex>
+        {/* <Flex>
           <DropdownMenu
             buttonLabel="Organize"
             menuItems={[
@@ -34,15 +36,30 @@ const Header: React.FC = () => {
               { label: 'Contact Us', href: '/contact-us' },
             ]}
             onItemClick={handleItemClick}
-          />
-          <Flex mx={2}>
-            <Box mx={6} py={4}>
-              <Link fontWeight="500">Login</Link>
-            </Box>
-            <Box mx={6} py={4}>
-              <Link fontWeight="500">Signup</Link>
-            </Box>
-          </Flex>
+          /> */}
+        <Flex mx={2} alignItems="center" justifyContent="center">
+          <Box>
+            <Button
+              style={{
+                background: "#ECA500",
+                color: "#ffffff",
+                padding: "",
+                margin: "0 10px",
+              }}
+            >
+              Create Event
+            </Button>
+          </Box>
+          
+          <Box mx={6} py={4}>
+            <Link fontWeight="500" textDecoration="none">Login</Link>
+          </Box>
+          <Box mx={6} py={4}>
+            <Link fontWeight="500" textDecoration="none">Signup</Link>
+          </Box>
+          <Box mx={6} py={4}>
+            <Link fontWeight="500" textDecoration="none">Contact Us</Link>
+          </Box>
         </Flex>
       </Flex>
     </Box>
