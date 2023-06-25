@@ -1,0 +1,36 @@
+.popup-open {
+  overflow: hidden;
+}
+
+.datalist-container {
+  position: relative;
+  width: 100%;
+  background: "green";
+}
+
+.datalist-container datalist {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 10rem;
+}
+
+.datalist-container datalist option {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.datalist-container datalist option:hover {
+  background-color: #f8f9fa;
+}
