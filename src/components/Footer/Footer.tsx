@@ -7,13 +7,13 @@ import {
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import { MdChangeCircle } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { FaFacebook, FaGithub, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <Box background="#1c0f2d" color="#ffffff" p={8}>
-      <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+      {/* <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         <Box
           alignItems="center"
           justifyContent="center"
@@ -236,7 +236,30 @@ const Footer = () => {
             </ListItem>
           </List>
         </Box>
-      </Grid>
+      </Grid> */}
+
+      <Flex alignItems="center" justifyContent="center" flexDirection="column">
+        <Flex my={2} mx={2}>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>About</NavLink>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>Blog</NavLink>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>Job</NavLink>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>Press</NavLink>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>Accessibility</NavLink>
+          <NavLink to="/about" style={{ padding: "0 20px"}}>Partners</NavLink>
+        </Flex>
+        <Flex my={2} mx={2}>
+          <FaFacebook style={{ margin: "0 20px" }} />
+          <FaInstagram style={{ margin: "0 20px" }} />
+          <FaTwitter style={{ margin: "0 20px" }} />
+          <FaGithub style={{ margin: "0 20px" }} />
+          <FaYoutube style={{ margin: "0 20px" }} />
+        </Flex>
+        <Box my={2} mx={2}>
+          <Text>
+          © 2020 Eventra, Inc. All rights reserved.
+          </Text>
+        </Box>
+      </Flex>
     </Box>
   );
 };
