@@ -153,7 +153,7 @@ const Banner: React.FC = () => {
         >
           {isPopupOpen ? (
             <Text color="#ffffff" fontSize="3xl" my={4}>
-              Search through events
+              Search for events that suits your interest
             </Text>
           ) : (
             <Text color="#ffffff" fontSize="3xl">

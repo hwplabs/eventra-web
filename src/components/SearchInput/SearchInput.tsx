@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import {
-  InputGroup,
-  InputLeftElement,
   Input,
   Box,
+  Flex
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import SearchInputProps from "./ISearchInput";
@@ -42,21 +41,20 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch, onClick, onChange }
       alignItems="center"
       justifyContent="center"
     >
-      <InputGroup size="md" maxW="md">
-        <InputLeftElement pointerEvents="none">
+      <Flex alignItems="center" justifyContent="center" border="1px solid" borderColor="#ECA500" width="100%" background="white">
+        <Box pointerEvents="none" mx={2} background="#ECA500" borderRadius="100%" py={2} px={3}>
           <SearchIcon
             color="#ffffff"
-            background="#ECA500"
-            p={2}
-            m={1}
-            borderRadius="25px"
-            w="1xl"
-            h="1xl"
+            // background="#ECA500"
+            // p={2}
+            
+            // w="1xl"
+            // h="1xl"
           />
-        </InputLeftElement>
+        </Box>
         <Input
-          type="text"
-          py={2}
+          type="search"
+          height={14}
           placeholder="Explore events around the world"
           value={searchQuery}
           onChange={handleInputChange}
@@ -64,12 +62,13 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch, onClick, onChange }
           onKeyDown={handleKeyDown}
           width="100%"
           borderRadius="full"
-          background="white"
+          border="none"
+          // background="white"
           _placeholder={{ color: "gray.600" }}
           color="black"
           id="events"
           outline="none"
-          _focus={{ border: "2px solid #ECA500" }}
+          // _focus={{ border: "2px solid #ECA500" }}
           _focusVisible={{}}
           list={showOptions ? "options" : undefined} // Show the datalist options only when showOptions is true
         />
@@ -78,7 +77,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch, onClick, onChange }
           <option value="Option 2" />
           <option value="Option 3" />
         </datalist> */}
-      </InputGroup>
+      </Flex>
     </Box>
   );
 };
