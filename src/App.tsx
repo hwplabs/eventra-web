@@ -7,10 +7,11 @@ import EventDetails from "../src/pages/EventDetails/EventDetails";
 import Header from "./components/Header";
 import Footer from "./components/Footer/Footer";
 import { Signup } from "./pages/Signup";
+import { Login } from "./pages/Login";
 
 const App = () => {
   // Add a list of paths where the header and footer should not be shown
-  const excludedPaths = ['/signup', '/login']; // Add more paths if needed
+  const excludedPaths = ["/signup", "/login"]; // Add more paths if needed
 
   // Function to check if the current path is excluded
   const isExcludedPath = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/event-details" element={<EventDetails />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       {renderFooter()}
     </>
@@ -48,4 +50,3 @@ const App = () => {
 };
 
 export default App;
-
