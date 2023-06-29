@@ -1,6 +1,7 @@
 import { Flex, Box, Button, Link, Spacer, Image } from "@chakra-ui/react";
 import _logo from "../../assets/logo/eventra.png";
 import DropdownMenu from "../DropdownButton/DropdownButton";
+import { NavLink } from "react-router-dom";
 
 const Header: React.FC = () => {
   const handleItemClick = (item: string) => {
@@ -51,14 +52,14 @@ const Header: React.FC = () => {
             </Button>
           </Box>
           
+          {/* <Box mx={6} py={4}>
+            <NavLink to="/login" style={{fontWeight: "500", textDecoration: "none"}} >Login</NavLink>
+          </Box> */}
           <Box mx={6} py={4}>
-            <Link fontWeight="500" textDecoration="none">Login</Link>
+            <NavLink to="signup" style={{fontWeight: "500", textDecoration: "none"}} >Signup</NavLink>
           </Box>
           <Box mx={6} py={4}>
-            <Link fontWeight="500" textDecoration="none">Signup</Link>
-          </Box>
-          <Box mx={6} py={4}>
-            <Link fontWeight="500" textDecoration="none">Contact Us</Link>
+            <NavLink to="/contact-us" style={{fontWeight: "500", textDecoration: "none"}} >Contact Us</NavLink>
           </Box>
         </Flex>
       </Flex>

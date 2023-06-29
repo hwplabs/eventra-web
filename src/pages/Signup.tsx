@@ -58,20 +58,7 @@ export const Signup = () => {
             <FormControl style={{ width: "60%" }}>
               <Flex my={4} mx={2} gap={8}>
               <Box>
-                <FormLabel>Full Name: </FormLabel>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  border="1px solid"
-                  borderColor="gray.200"
-                >
-                  <FaUser color="#ECA500" style={{ margin: "0 10px"}} />
-                  <Input type="text" placeholder="Enter your full name" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
-                </Box>
-              </Box>
-              <Box>
-                <FormLabel>Username </FormLabel>
+                <FormLabel htmlFor="firstName">First Name: </FormLabel>
                 <Box
                   display="flex"
                   alignItems="center"
@@ -80,13 +67,26 @@ export const Signup = () => {
                   borderColor="gray.200"
                 >
                   <FaUserTie color="#ECA500" style={{ margin: "0 10px"}} />
-                  <Input type="text" placeholder="Enter your username" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
+                  <Input type="text" placeholder="" id="firstName" name="firstName" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
+                </Box>
+              </Box>
+              <Box>
+                <FormLabel htmlFor="lastName">Last Name: </FormLabel>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border="1px solid"
+                  borderColor="gray.200"
+                >
+                  <FaUserTie color="#ECA500" style={{ margin: "0 10px"}} />
+                  <Input type="text" placeholder="" id="lastName" name="lastName" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
                 </Box>
               </Box>
               </Flex>
               
               <Box mx={2} my={4}>
-                <FormLabel>Email </FormLabel>
+                <FormLabel htmlFor="email">Email </FormLabel>
                 <Box
                   display="flex"
                   alignItems="center"
@@ -95,12 +95,12 @@ export const Signup = () => {
                   borderColor="gray.200"
                 >
                   <SiGmail color="#ECA500" style={{ margin: "0 10px"}} />
-                  <Input type="email" placeholder="Enter your email address" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
+                  <Input type="email" placeholder="" id="email" name="email" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
                 </Box>
               </Box>
 
               <Box mx={2} my={4}>
-                <FormLabel>Password </FormLabel>
+                <FormLabel htmlFor="password">Password </FormLabel>
                 <Box
                   display="flex"
                   alignItems="center"
@@ -109,15 +109,29 @@ export const Signup = () => {
                   borderColor="gray.200"
                 >
                   <FaLock color="#ECA500" style={{ margin: "0 10px"}} />
-                  <Input type="password" placeholder="Enter your password" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
+                  <Input type="password" placeholder="Enter your password" name="password" id="password" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
                 </Box>
               </Box>
 
               <Box mx={2} my={4}>
-                <Checkbox colorScheme="green">Creating an account means you’re okay with our Terms of Service, Privacy Policy, and our default Notification Settings.</Checkbox>
+                <FormLabel htmlFor="confirmPassword">Confirm Password </FormLabel>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border="1px solid"
+                  borderColor="gray.200"
+                >
+                  <FaLock color="#ECA500" style={{ margin: "0 10px"}} />
+                  <Input type="password" placeholder="Re-Enter your password" name="confirmPassword" id="confirmPassword" border="none" _focusVisible={{}} borderLeft="1px solid" borderColor="gray.200" borderRadius="0" />
+                </Box>
               </Box>
 
-              <Box>
+              <Box mx={2} my={4}>
+                <Checkbox colorScheme="yellow">Creating an account means you’re okay with our <NavLink to="terms" style={{ color: "#ECA500"}}>Terms of Service</NavLink>, <NavLink to="privacy" style={{ color: "#ECA500"}}>Privacy Policy</NavLink>, and our default <NavLink to="notifications" style={{ color: "#ECA500"}}>Notification Settings.</NavLink></Checkbox>
+              </Box>
+
+              <Box mx={2} my={4}>
                 <Button background="#ECA500">Create Account</Button>
               </Box>
             </FormControl>
