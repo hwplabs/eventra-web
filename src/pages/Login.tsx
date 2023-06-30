@@ -6,8 +6,6 @@ import {
   Input,
   Text,
   Flex,
-  Checkbox,
-  CheckboxGroup,
   Button,
   FormControl,
 } from "@chakra-ui/react";
@@ -16,12 +14,11 @@ import {
   FaLock,
   FaFacebook,
   FaGoogle,
-  FaUserTie,
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { Form, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { useLogin } from "../hooks/useLogin";
 

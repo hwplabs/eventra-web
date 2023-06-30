@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-import { Box, Image, GridItem, Flex, Text, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  GridItem,
+  Flex,
+  Text,
+  Link,
+  background,
+} from "@chakra-ui/react";
 
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { GiCheckMark } from "react-icons/gi";
@@ -8,6 +16,7 @@ import { GiCheckMark } from "react-icons/gi";
 import _profile from "../../assets/logo/profile.png";
 
 import { CalendarIcon, InfoIcon, StarIcon, TimeIcon } from "@chakra-ui/icons";
+import { NavLink } from "react-router-dom";
 
 interface EventCardProps {
   imageSrc: string;
@@ -18,6 +27,7 @@ interface EventCardProps {
     location: string;
     followers: string;
     organizer: string;
+    price: string;
   };
 }
 
@@ -67,7 +77,7 @@ const EventCard: React.FC<EventCardProps> = ({ imageSrc, eventData }) => {
           left="5px"
           //   transform="rotate(-30deg)"
           color="white"
-          background="#097969"
+          background="green.500"
           //   background="rgba(0, 0, 0, 0.5)"
           px="1"
           //   borderRadius="50%"
@@ -143,7 +153,7 @@ const EventCard: React.FC<EventCardProps> = ({ imageSrc, eventData }) => {
           <Flex py="2" alignItems="center" justifyContent="start">
             <StarIcon color="#ECA500" />
             <Text fontSize="15px" fontWeight="500" px="2">
-              {eventData.followers} Followers
+              {eventData.followers} Attendees
             </Text>
           </Flex>
           <Flex py="2" alignItems="center" justifyContent="start">
@@ -160,32 +170,43 @@ const EventCard: React.FC<EventCardProps> = ({ imageSrc, eventData }) => {
             </Text>
           </Flex>
         </Box>
-        <Link
-          href="/event-details"
-          target="_blank"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          background="gray.100"
-          transition="ease .3s"
-          borderRadius="10px"
-          _hover={{ background: "#ECA500", color: "#fff" }}
-        >
-          <GiCheckMark />
-          <Text
-            p="4"
-            borderRadius="25px"
-            // position="absolute"
-            textAlign="center"
-            textDecoration="none"
-            // fontWeight="bold"
-            // bottom="40px"
-            // right="20px"
-            //   transform={"rotate(-30deg)"}
-          >
-            Attend
-          </Text>
-        </Link>
+        <Flex alignItems="center" justifyContent="space-between" my={2} px={1}>
+          <Box background="green.500" p={2} color="#ffffff">
+            <Text>₦ {eventData.price}</Text>
+          </Box>
+          {/* <Link
+            href="/event-details"
+            target="_blank"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            background="gray.100"
+            transition="ease .3s"
+            borderRadius="10px"
+            _hover={{ background: "#ECA500", color: "#fff" }}
+          > */}
+          {/* <GiCheckMark /> */}
+          <Box background="#ECA500" p={2} color="#ffffff" width="50%" textAlign="center" borderRadius="10px 0 0 10px">
+            <NavLink
+              to="/event-details"
+              style={{
+                padding: "4",
+                // position="absolute"
+                textAlign: "center",
+                textDecoration: "none",
+              }}
+
+              // fontWeight="bold"
+              // bottom="40px"
+              // right="20px"
+              //   transform={"rotate(-30deg)"}
+            >
+              RSVP
+            </NavLink>
+          </Box>
+
+          {/* </Link> */}
+        </Flex>
       </Box>
     </GridItem>
   );

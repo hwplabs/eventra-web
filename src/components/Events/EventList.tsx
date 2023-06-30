@@ -26,99 +26,107 @@ interface EventListProps {
 const EventList: React.FC<EventListProps> = ({ title, selectedFilter }) => {
   const eventDataList = [
     {
-      category: "all",
+      category: "food_and_drinks",
       imageSrc: `${_weddingImage}`,
       eventData: {
         title: "Wedding Anniversary",
-        date: "June 5, 2023",
+        date: "November 5, 2023",
         time: "2:00 PM",
         location: "Ajegunle, Idi omo",
         followers: "10K",
         organizer: "Chris weds Mary - ChriMa",
+        price: "2500"
       },
     },
     {
-      category: "all",
+      category: "virtual",
       imageSrc: `${_church}`,
       eventData: {
         title: "Revival Hour",
-        date: "June 6, 2023",
+        date: "December 25, 2023",
         time: "4:00 PM",
         location: "RCCG Jesus Team",
         followers: "1.5K",
         organizer: "Jaymikee",
+        price: "100"
       },
     },
     {
-      category: "for-you",
+      category: "today",
       imageSrc: `${_concert}`,
       eventData: {
         title: "Rema is coming",
-        date: "June 6, 2023",
+        date: "Javuary 10, 2023",
         time: "4:00 PM",
         location: "UI, agbowo",
         followers: "11K",
         organizer: "SUG President",
+        price: "1200"
       },
     },
     {
-      category: "for-you",
+      category: "weekend",
       imageSrc: `${_sport}`,
       eventData: {
         title: "Marathon Race",
-        date: "June 6, 2023",
+        date: "March 16, 2023",
         time: "4:00 PM",
         location: "UI Gate to Unilag",
         followers: "20K",
         organizer: "UI Competition",
+        price: "350"
       },
     },
     {
-      category: "online",
+      category: "health_awareness",
       imageSrc: `${_reunion}`,
       eventData: {
         title: "Reunion Cultural",
-        date: "June 6, 2023",
+        date: "October 1, 2023",
         time: "4:00 PM",
         location: "Akawo moayiokd",
         followers: "20K",
         organizer: "UI 2044' set",
+        price: "700"
       },
     },
     {
-      category: "online",
+      category: "music",
       imageSrc: `${_weddingImage}`,
       eventData: {
         title: "Techpreneur Live",
-        date: "June 6, 2023",
+        date: "September 17, 2023",
         time: "4:00 PM",
         location: "Underbrigde",
         followers: "3K",
         organizer: "AITI",
+        price: "500"
       },
     },
     {
-      category: "food",
+      category: "food_and_drinks",
       imageSrc: `${_church}`,
       eventData: {
         title: "Google dev meetup",
-        date: "June 6, 2023",
+        date: "Feb 14, 2023",
         time: "4:00 PM",
         location: "Google official building",
         followers: "90K",
         organizer: "Google",
+        price: "1500"
       },
     },
     {
-      category: "food",
+      category: "exhibition",
       imageSrc: `${_concert}`,
       eventData: {
         title: "Amazon Bureau",
-        date: "June 6, 2023",
+        date: "May 26, 2023",
         time: "4:00 PM",
         location: "Light out venue",
         followers: "20K",
         organizer: "Amazon",
+        price: "200"
       },
     },
   ];
