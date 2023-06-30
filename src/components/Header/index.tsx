@@ -1,4 +1,4 @@
-import { Flex, Box, Button, Link, Spacer, Image } from "@chakra-ui/react";
+import { Flex, Box, Button, Link, Spacer, Image, Text } from "@chakra-ui/react";
 import _logo from "../../assets/logo/eventra.png";
 import DropdownMenu from "../DropdownButton/DropdownButton";
 import { NavLink } from "react-router-dom";
@@ -11,12 +11,12 @@ const Header: React.FC = () => {
   return (
     <Box mx={5} py={1}>
       <Flex>
-        <Flex>
+        <NavLink to="/" style={{ display: "flex", alignItems: "center"}}>
           <Image boxSize="50px" objectFit="cover" src={_logo} alt="logo" />
-          <Link href="/" fontSize="3xl" textDecoration="none">
+          <Text fontSize="3xl" textDecoration="none">
             Eventra
-          </Link>
-        </Flex>
+          </Text>
+        </NavLink>
         <Spacer />
         {/* <Flex>
           <DropdownMenu

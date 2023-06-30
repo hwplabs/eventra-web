@@ -17,12 +17,17 @@ import {
   FaFacebook,
   FaGoogle,
   FaUserTie,
+  FaEyeSlash,
+  FaEye,
 } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import vip from "../assets/images/vip.jpg";
 import { Form, NavLink } from "react-router-dom";
 
 import { useSignup } from "../hooks/useSignup";
+
+
+import vip from "../assets/images/vip.jpg";
+import _logo from "../assets/logo/eventra.png"
 
 export const Signup = () => {
   const {
@@ -38,27 +43,22 @@ export const Signup = () => {
     setConfirmPassword,
     firstNameError,
     lastNameError,
-    setFirstNameError,
-    setLastNameError,
     emailError,
-    setEmailError,
     passwordError,
     confirmPasswordError,
-    setPasswordError,
-    setConfirmPasswordError,
     showPassword,
-    setShowPassword,
+    showConfirmPassword,
     isChecked,
-    setIsChecked,
     handleFirstNameBlur,
     handleLastNameBlur,
     handleEmailBlur,
     handlePasswordBlur,
     handleConfirmPasswordBlur,
     handleShowPasswordClick,
+    handleShowConfirmPasswordClick,
     handleCheckboxChange,
     handleFormSubmit,
-    isFormValid,
+    isFormValid
   } = useSignup();
 
   return (
@@ -71,7 +71,13 @@ export const Signup = () => {
         >
           {/* <Image src={vip} alt="Display image" width="100%" height="100vh" /> */}
         </Box>
+
         <Box p={6} overflow="auto">
+        <Flex alignItems="center" justifyContent="space-between">
+            <NavLink to="/" style={{ display: "flex", alignItems: "center" }}>
+              <Image boxSize="50px" objectFit="cover" src={_logo} alt="logo" />
+              <Text fontSize="2xl">Eventra</Text>
+            </NavLink>
           <Box display="flex" alignItems="end" justifyContent="end">
             <Text>
               Already a member?
@@ -88,13 +94,14 @@ export const Signup = () => {
               </NavLink>
             </Text>
           </Box>
+        </Flex>
           <Box
             p={4}
             display="flex"
             alignItems="center"
             justifyContent="start"
             flexDirection="column"
-            minHeight="100vh"
+            // minHeight="100vh"
           >
             <Box>
               <Text fontSize="2em" py={2}>
@@ -216,7 +223,7 @@ export const Signup = () => {
                 >
                   <FaLock color="#ECA500" style={{ margin: "0 10px" }} />
                   <Input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     name="password"
                     id="password"
@@ -229,6 +236,9 @@ export const Signup = () => {
                     borderColor="gray.200"
                     borderRadius="0"
                   />
+                  <Box onClick={handleShowPasswordClick}>
+                    {showPassword ? <FaEyeSlash style={{ margin: "0 10px"}} /> : <FaEye style={{ margin: "0 10px"}} />}
+                  </Box>
                 </Box>
                 {passwordError && (
                   <Box py={1} color="#ECA500">
@@ -250,7 +260,7 @@ export const Signup = () => {
                 >
                   <FaLock color="#ECA500" style={{ margin: "0 10px" }} />
                   <Input
-                    type="password"
+                    type={showConfirmPassword ? "text" : "password"}
                     placeholder="Re-Enter your password"
                     name="confirmPassword"
                     id="confirmPassword"
@@ -263,6 +273,9 @@ export const Signup = () => {
                     borderColor="gray.200"
                     borderRadius="0"
                   />
+                  <Box onClick={handleShowConfirmPasswordClick}>
+                    {showConfirmPassword ? <FaEyeSlash style={{ margin: "0 10px"}} /> : <FaEye style={{ margin: "0 10px"}} />}
+                  </Box>
                 </Box>
                 {confirmPasswordError && (
                   <Box py={1} color="#ECA500">

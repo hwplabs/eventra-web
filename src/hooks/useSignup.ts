@@ -26,6 +26,7 @@ export const useSignup = () => {
   const [passwordError, setPasswordError] = useState("");
   const [ confirmPasswordError, setConfirmPasswordError ] = useState("")
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
   const handleFirstNameBlur = () => {
@@ -94,6 +95,10 @@ export const useSignup = () => {
     setShowPassword(!showPassword);
   };
 
+  const handleShowConfirmPasswordClick = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
@@ -139,7 +144,9 @@ export const useSignup = () => {
     setPasswordError,
     setConfirmPasswordError,
     showPassword,
+    showConfirmPassword,
     setShowPassword,
+    setShowConfirmPassword,
     isChecked,
     setIsChecked,
     handleFirstNameBlur,
@@ -148,6 +155,7 @@ export const useSignup = () => {
     handlePasswordBlur,
     handleConfirmPasswordBlur,
     handleShowPasswordClick,
+    handleShowConfirmPasswordClick,
     handleCheckboxChange,
     handleFormSubmit,
     isFormValid
